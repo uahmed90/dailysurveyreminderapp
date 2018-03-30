@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>Sample FirebaseUI App</title>
+            <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed" rel="stylesheet">
+            <link rel="stylesheet" href="style.css"
+    
+    </head>
+    <body>
+        <div id="login_div" class="main-div">
+            <h3> Firebase Login </h3>
+            <input type = "email" placeholder = "Email..." id="email_field" />
+            <input type = "password" placeholder = "Password..." id="password_field" />
+            
+            <button onclick="login()">Login to account</button>
+        </div>
+        
+        <div id="user_div" class = "loggedin-div">
+            <h3>Welcome, User</h3>
+            <p id="user_para">Welcome to the logged in page. You are currently logged in</p>
+            <button onclick= "logout()">Logout</button>
+            
+        
+        </div>
+        
+        
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCOUA9eYXRgrStbMXx-bcE2lR7e5IYjP2g",
+                authDomain: "testingdb-a8cd7.firebaseapp.com",
+                databaseURL: "https://testingdb-a8cd7.firebaseio.com",
+                projectId: "testingdb-a8cd7",
+                storageBucket: "testingdb-a8cd7.appspot.com",
+                messagingSenderId: "384953133465"
+            };
+            firebase.initializeApp(config);
+        </script>
+        
+        <script src="index.js"></script>
+
+    </body>
+</html>
