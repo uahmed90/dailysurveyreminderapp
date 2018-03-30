@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+ — “7”
+script:
+ — echo “Deploy!!”
+install:
+ — npm install -g firebase-tools
+after_success:
+ — firebase deploy — project testingdb-a8cd7 — token 1/dxxhck_AWaz7yNmrKaNLfi5L2MRNgOplp5dXXQ56zfI
