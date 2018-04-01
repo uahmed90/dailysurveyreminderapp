@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+
+  
+    
+      <script type="text/javascript" src="https://unpkg.com/survey-jquery@0.12.10/survey.jquery.min.js"></script>
+    
+  
+    
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    
+  
+
+  <style type="text/css">
+    .btn-green {
+  background-color: #003087;
+  color: #fff;
+  border-radius: 3px; }
+  .btn-green:hover, .btn-green:focus {
+    background-color: #898d8d;
+    color: #fff; }
+
+.panel-footer {
+  text-align: right;
+  background-color: #fff; }
+
+.title {
+  font-family: "Helvetica"; }
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 10px;
+  border-color: #003087; }
+
+  </style>
+
+  <title>Evening survey by claybold</title>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+window.onload=function(){
+
+var json = {
+ pages: [
+  {
+   name: "page1",
+   elements: [
+    {
+     type: "matrix",
+     name: "question1",
+     title: "Perceptions of Self DMST\n\nAnswer the following questions by thinking of the interaction you mentioned above. If you know or you think your friend was not doing something else during the interaction, choose \"NA\".\nOtherwise, use the following to show how much you agree wiht the following statements:",
+     isRequired: true,
+     columns: [
+      {
+       value: "Column 1",
+       text: "Strongly Disagree"
+      },
+      {
+       value: "Column 2",
+       text: "Disagree"
+      },
+      {
+       value: "Column 3",
+       text: "In Between"
+      },
+      {
+       value: "Column 4",
+       text: "Agree"
+      },
+      {
+       value: "Column 5",
+       text: "Strongly Agree"
+      },
+      {
+       value: "Column 6",
+       text: "NA"
+      }
+     ],
+     rows: [
+      {
+       value: "Row 1",
+       text: "(1) I felt guilty that I was doing something else (on the phone) while interacting with the friend"
+      },
+      {
+       value: "Row 2",
+       text: "(2) I shouldn't have been doing other things (on the phone) when interacting with the friend"
+      },
+      {
+       value: "Row 3",
+       text: "(3) It was inappropriate that I was doing other things (on the phone) while interacting with the friend."
+      },
+      {
+       value: "Row 4",
+       text: "(4) It was normal to do something else (on the phone) while interacting with the friend"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   name: "page2",
+   elements: [
+    {
+     type: "matrix",
+     name: "question2",
+     title: "Perception of Friends' DSMT\n\nAnswer the following questions by thinking of the interaction you mentioned above. If you know or you think your friend was not doing something else during the interaction, choose \"NA\".\nOtherwise, use the following to show how much you agree wiht the following statements:",
+     isRequired: true,
+     columns: [
+      {
+       value: "Column 1",
+       text: "Strongly Disagree"
+      },
+      {
+       value: "Column 2",
+       text: "Disagree"
+      },
+      {
+       value: "Column 3",
+       text: "In Between"
+      },
+      {
+       value: "Column 4",
+       text: "Agree"
+      },
+      {
+       value: "Column 5",
+       text: "Strongly Agree"
+      },
+      {
+       value: "Column 6",
+       text: "NA"
+      }
+     ],
+     rows: [
+      {
+       value: "Row 1",
+       text: "(1) I wish the friend was not doing other things (on the phone) while interacting with me"
+      },
+      {
+       value: "Row 2",
+       text: "(2) I felt invisible when the friend did something else (on the phone) while interacting with me"
+      },
+      {
+       value: "Row 3",
+       text: "(3) When the friend did something else (on the phone) during our interaction, I felt unimportant to the friend"
+      },
+      {
+       value: "Row 4",
+       text: "(4) I didn't care whether the friend was doing something else (on the phone) while interacting with me"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   name: "page3",
+   elements: [
+    {
+     type: "matrix",
+     name: "question3",
+     title: "Friendship Satisfaction\nThink of the interaction you mentioned above. Answer the following questions based on your relationship with that friend.(1 = Not at all; 5 = Very Much)",
+     isRequired: true,
+     columns: [
+      {
+       value: "Column 1",
+       text: "Not at all"
+      },
+      {
+       value: "Column 2",
+       text: "Not a lot"
+      },
+      {
+       value: "Column 3",
+       text: "In Between"
+      },
+      {
+       value: "Column 4",
+       text: "A lot"
+      },
+      {
+       value: "Column 5",
+       text: "Very Much"
+      }
+     ],
+     rows: [
+      {
+       value: "Row 1",
+       text: "(1) How satisfied are you with your relationship with this friend today?"
+      },
+      {
+       value: "Row 2",
+       text: "(2) How good is your relationship with this friend today?"
+      },
+      {
+       value: "Row 3",
+       text: "(3) How happy are you with the way things are between you and this friend today?"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   name: "page4",
+   elements: [
+    {
+     type: "matrix",
+     name: "question4",
+     title: "Emotional Support from Friends\n\nThink of the interaction you mentioned above. Answer the following questions based on your relationship with that friend.(1 = Not at all; 5 = Very Much)",
+     isRequired: true,
+     columns: [
+      {
+       value: "Column 1",
+       text: "Not at all"
+      },
+      {
+       value: "Column 2",
+       text: "Not a lot"
+      },
+      {
+       value: "Column 3",
+       text: "In Between"
+      },
+      {
+       value: "Column 4",
+       text: "A lot"
+      },
+      {
+       value: "Column 5",
+       text: "Very Much"
+      }
+     ],
+     rows: [
+      {
+       value: "Row 1",
+       text: "(1) Today I feel I can turn to this friend for support with personal problems"
+      },
+      {
+       value: "Row 2",
+       text: "(2) Today I feel I can depend on this friend for help, advice, or sympathy"
+      },
+      {
+       value: "Row 3",
+       text: "(3) Today I feel I can depend on this friend to cheer things up if I feel down or upset"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   name: "page5",
+   elements: [
+    {
+     type: "matrix",
+     name: "question5",
+     title: "Loneliness in Peer Contexts\nHow much do you agree with the following statements? (1= Strongly Disagree; 5 = Strongly Agree)",
+     isRequired: true,
+     columns: [
+      {
+       value: "Column 1",
+       text: "Not at all"
+      },
+      {
+       value: "Column 2",
+       text: "Not a lot"
+      },
+      {
+       value: "Column 3",
+       text: "In Between"
+      },
+      {
+       value: "Column 4",
+       text: "A lot"
+      },
+      {
+       value: "Column 5",
+       text: "Very Much"
+      }
+     ],
+     rows: [
+      {
+       value: "Row 1",
+       text: "(1) Today I feel that I lack companionship from peers in school."
+      },
+      {
+       value: "Row 2",
+       text: "(2) Today I feel left out by peers in school."
+      },
+      {
+       value: "Row 3",
+       text: "(3) Today I feel isolated from peers in school."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   name: "page6",
+   elements: [
+    {
+     type: "matrix",
+     name: "question6",
+     title: "Behavioral Engagement\n\nHow much do you agree with the following statements?",
+     isRequired: true,
+     columns: [
+      {
+       value: "Column 1",
+       text: "Strongly Disagree"
+      },
+      {
+       value: "Column 2",
+       text: "Disagree"
+      },
+      {
+       value: "Column 3",
+       text: "In Between"
+      },
+      {
+       value: "Column 4",
+       text: "Agree"
+      },
+      {
+       value: "Column 5",
+       text: "Strongly Agree"
+      }
+     ],
+     rows: [
+      {
+       value: "Row 1",
+       text: "(1) Today I came to class unprepared (homework unfinished, forgot to bring books or other materials, etc.)"
+      },
+      {
+       value: "Row 2",
+       text: "(2) I completed all my homework due today on time."
+      },
+      {
+       value: "Row 3",
+       text: "(3) Today I skipped many classes without permission"
+      },
+      {
+       value: "Row 4",
+       text: "(4) Today I actively took part in class discussions"
+      },
+      {
+       value: "Row 5",
+       text: "(5) Today I worked hard to do well in school"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   name: "page7",
+   elements: [
+    {
+     type: "matrix",
+     name: "question7",
+     title: "Emotional Engagement",
+     isRequired: true,
+     columns: [
+      {
+       value: "Column 1",
+       text: "Strongly Disagree"
+      },
+      {
+       value: "Column 2",
+       text: "Disagree"
+      },
+      {
+       value: "Column 3",
+       text: "In Between"
+      },
+      {
+       value: "Column 4",
+       text: "Agree"
+      },
+      {
+       value: "Column 5",
+       text: "Strongly Agree"
+      }
+     ],
+     rows: [
+      {
+       value: "Row 1",
+       text: "(1) Today I feel like I'm part of my school"
+      },
+      {
+       value: "Row 2",
+       text: "(2) Today I care about the school I go to."
+      },
+      {
+       value: "Row 3",
+       text: "(3) Today I am happy to be at my school"
+      },
+      {
+       value: "Row 4",
+       text: "(4) Today I don't find school fun and exciting"
+      },
+      {
+       value: "Row 5",
+       text: "(5) Today I enjoy the classes I am taking"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   name: "page8",
+   elements: [
+    {
+     type: "matrix",
+     name: "question8",
+     title: "Cognitive Engagement",
+     isRequired: true,
+     columns: [
+      {
+       value: "Column 1",
+       text: "Strongly Disagree"
+      },
+      {
+       value: "Column 2",
+       text: "Disagree"
+      },
+      {
+       value: "Column 3",
+       text: "In Between"
+      },
+      {
+       value: "Column 4",
+       text: "Agree"
+      },
+      {
+       value: "Column 5",
+       text: "Strongly Agree"
+      },
+      {
+       value: "Column 6",
+       text: "NA"
+      }
+     ],
+     rows: [
+      {
+       value: "Row 1",
+       text: "(1) Today I want to learn as much as I can at school."
+      },
+      {
+       value: "Row 2",
+       text: "(2) Today I think it is important to make good grades."
+      },
+      {
+       value: "Row 3",
+       text: "(3) Today I think the things I learn at school are useful."
+      },
+      {
+       value: "Row 4",
+       text: "(4) Today I think a lot about how to do well in school"
+      },
+      {
+       value: "Row 5",
+       text: "(5) Today I think school is very important for later success"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+};
+
+Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
+Survey.defaultBootstrapCss.matrixdynamic.button = "btn btn-green";
+Survey.Survey.cssType = "bootstrap";
+
+var survey = new Survey.Model(json);
+
+survey.onComplete.add(function(result) {
+  document.querySelector('#result').innerHTML = "result: " + JSON.stringify(result.data);
+});
+
+$("#surveyElement").Survey({
+  model: survey
+});
+
+
+}
+
+
+
+
+</script>
+
+  
+</head>
+
+<body>
+  <!doctype html>
+<html>
+  <title>Daily Survey Reminder</title>
+
+  <head><script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.0.15/survey.jquery.js"></script>
+        <link href="https://surveyjs.azureedge.net/1.0.15/survey.css" type="text/css" rel="stylesheet"/>
+        
+  
+    <link rel="stylesheet" href="Survey.css">
+  </head>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-functions.js"></script>
+  <body>
+    <h1 class="title">
+      Daily Survey
+      <hr>
+    </h1>
+    <h2>
+      Evening Survey
+    </h2>
+    <p>
+      Please fill out all of the information below
+    </p>
+
+
+
+    <div id="surveyElement"></div>
+
+    <div id="result"></div>
+    <hr>
+
+  </body>
+
+</html>
+
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "L3qwe9q2"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+
