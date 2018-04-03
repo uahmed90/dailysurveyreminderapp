@@ -16,9 +16,10 @@ input, button{
     margin: 0px auto;
     margin-top: 150px;
     padding: 20px;
+    display: none;
 }
 
-.main-div input{
+.main-div input, .register-div input{
     display: block;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -32,11 +33,11 @@ input, button{
     -moz-transition: 0.3s;
 }
 
-.main-div input:focus{
+.main-div input:focus, .register-div input:focus{
     border: 1px solid #777;
 }
 
-.main-div button, .loggedin-div button{
+.main-div button, .loggedin-div button, .register-div button{
     background: #5d8ffc;
     color: #fff;
     border 1px solid #5d8ffc;
@@ -44,15 +45,22 @@ input, button{
     border-radius: 5px;
     padding: 15px;
     display: block;
-    width: 100;
+    width: 100%;
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
 }
 
-.main-div button: hover, .loggedin-div button: hover{
+.main-div button: hover, .loggedin-div button: hover, .register-div button: hover{
     background: #fff
     color: #5d8ffc;
     border 1px solid #5d8ffc;
     cursor: pointer;
+}
+
+.register-div{
+    width: 20%;
+    margin: 0px auto;
+    margin-top: 150px;
+    padding: 20px;
 }
