@@ -1,2 +1,2 @@
 # dailysurveyreminderapp
-This is the github we will use as our central repository for our app
+This is the GitHub we will use as our central repository for our app.
