@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+
+  
+    
+      <script type="text/javascript" src="https://unpkg.com/survey-jquery@0.12.10/survey.jquery.min.js"></script>
+    
+  
+    
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    
+  
+
+  <style type="text/css">
+    .btn-green {
+  background-color: #003087;
+  color: #fff;
+  border-radius: 3px; }
+  .btn-green:hover, .btn-green:focus {
+    background-color: #898d8d;
+    color: #fff; }
+
+.panel-footer {
+  text-align: right;
+  background-color: #fff; }
+
+.title {
+  font-family: "Helvetica"; }
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 10px;
+  border-color: #003087; }
+
+  </style>
+
+  <title> by claybold</title>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+window.onload=function(){
+
+var json = {
+  pages: [{
+      name: "page1",
+      elements: [{
+          type: "dropdown",
+          name: "question1",
+          title: "Gender",
+          isRequired: true,
+          choices: [{
+              value: "item1",
+              text: "Male"
+            },
+            {
+              value: "item2",
+              text: "Female"
+            }
+          ]
+        },
+        {
+          type: "text",
+          name: "question2",
+          startWithNewLine: false,
+          title: "Age",
+          isRequired: true,
+          inputType: "number"
+        },
+        {
+          type: "dropdown",
+          name: "question7",
+          title: "Grade",
+          isRequired: true,
+          choices: [{
+              value: "item1",
+              text: "6th"
+            },
+            {
+              value: "item2",
+              text: "7th"
+            },
+            {
+              value: "item3",
+              text: "8th"
+            },
+            {
+              value: "item4",
+              text: "9th"
+            },
+            {
+              value: "item5",
+              text: "10th"
+            },
+            {
+              value: "item6",
+              text: "11th"
+            },
+            {
+              value: "item7",
+              text: "12th"
+            }
+          ]
+        },
+        {
+          type: "checkbox",
+          name: "question3",
+          title: "What is your Race/Ethnicity (check all that apply)",
+          isRequired: true,
+          hasOther: true,
+          choices: [{
+              value: "white",
+              text: "White/European"
+            },
+            {
+              value: "afr",
+              text: "African American"
+            },
+            {
+              value: "as",
+              text: "Asian"
+            },
+            {
+              value: "lat",
+              text: "Latino/Hispanic"
+            },
+            {
+              value: "nav",
+              text: "Native American"
+            },
+            {
+              value: "haw",
+              text: "Native Hawaiian"
+            }
+          ],
+          otherText: "other:"
+        }
+      ]
+    },
+    {
+      name: "page2",
+      elements: [{
+          type: "radiogroup",
+          name: "question4",
+          title: "Are you attending a PRIVATE or PUBLIC school while participating in this survey?",
+          isRequired: true,
+          choices: [{
+              value: "item1",
+              text: "Public School"
+            },
+            {
+              value: "item2",
+              text: "Private School"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "question5",
+          visibleIf: "{question4} = \"item1\"",
+          title: "Are you eligible for free or reduced-price lunch?",
+          isRequired: true,
+          choices: [{
+              value: "item1",
+              text: "Yes"
+            },
+            {
+              value: "item2",
+              text: "No"
+            }
+          ]
+        },
+        {
+          type: "radiogroup",
+          name: "question6",
+          visibleIf: "{question4} = \"item2\"",
+          title: "Which of the following is true for you?",
+          isRequired: true,
+          choices: [{
+              value: "item1",
+              text: " I receive full/partial tuition waiver because my parent(s) work at this school"
+            },
+            {
+              value: "item2",
+              text: "My parents/guardians and/or another relative(s) pay some tuition, and I receive financial aid"
+            },
+            {
+              value: "item3",
+              text: " My parents/guardians and another relative(s) (e.g., grandparents) pay the full tuition"
+            },
+            {
+              value: "item4",
+              text: "My parents/guardians pay the full tuition"
+            },
+            {
+              value: "item5",
+              text: "I don't know"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
+Survey.defaultBootstrapCss.matrixdynamic.button = "btn btn-green";
+Survey.Survey.cssType = "bootstrap";
+
+var survey = new Survey.Model(json);
+
+survey.onComplete.add(function(result) {
+  document.querySelector('#result').innerHTML = "result: " + JSON.stringify(result.data);
+});
+
+$("#surveyElement").Survey({
+  model: survey
+});
+
+
+}
+
+
+
+
+</script>
+
+  
+</head>
+
+<body>
+  <!doctype html>
+<html>
+  <title>Daily Survey Reminder</title>
+
+  <head>
+    <link rel="stylesheet" href="Survey.css">
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-functions.js"></script>
+
+<script src="https://unpkg.com/jquery"></script>
+        
+<script src="https://surveyjs.azureedge.net/1.0.15/survey.jquery.js"></script>
+        
+<link href="https://surveyjs.azureedge.net/1.0.15/survey.css" type="text/css" rel="stylesheet"/>
+
+  </head>
+
+  <body>
+    <h1 class="title">
+      Daily Survey
+      <hr>
+    </h1>
+    <h2>
+      Hello and Welcome to the Introductory Survey
+    </h2>
+    <p>
+      Please fill out all of the information below
+    </p>
+
+
+
+    <div id="surveyElement"></div>
+
+    <div id="result"></div>
+    <hr>
+
+  </body>
+
+</html>
+
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "L3qwe9q2"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+
