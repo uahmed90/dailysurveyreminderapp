@@ -1,11 +1,12 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
-        document.getElementById("user_div").style.display = "block";
-        document.getElementById("login_div").style.display = "none";
+       location.href = 'home.html';
+
+        var user = firebase.auth().currentUser;
+
     } else {
 
-         document.getElementById("user_div").style.display = "none";
         document.getElementById("login_div").style.display = "block";
         // No user is signed in.
     }
@@ -27,8 +28,3 @@ function login(){
     
 }
 
-function logout(){
-    
-    firebase.auth().signOut()                                   
-    
-}
