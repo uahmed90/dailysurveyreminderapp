@@ -11,7 +11,7 @@ input, button{
     font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
-.loggedin-div{
+.loggedin-div, .register-div{
     width: 20%;
     margin: 0px auto;
     margin-top: 150px;
@@ -65,9 +65,4 @@ input, button{
     cursor: pointer;
 }
 
-.register-div{
-    width: 20%;
-    margin: 0px auto;
-    margin-top: 150px;
-    padding: 20px;
-}
+
