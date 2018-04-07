@@ -6,4 +6,4 @@ script:
 install:
  — npm install -g firebase-tools
 after_success:
- — firebase deploy — project testingdb-a8cd7 — token 1/6dN2giBnmHjPpbik6eomfpxlnQVv09VFC-jyoF75YRM
+ — firebase deploy — project testingdb-a8cd7 — token $1/6dN2giBnmHjPpbik6eomfpxlnQVv09VFC-jyoF75YRM
