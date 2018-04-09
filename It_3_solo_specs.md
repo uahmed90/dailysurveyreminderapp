@@ -15,7 +15,7 @@
 ## Tasks: Umair
 
 ### Task 1: Setup Timed Notifications
-- Description: xxx Setup an app server that will create and send notifications to users when a new survey is available
+- Description:  Setup an app server that will create and send notifications to users when a new survey is available
 - How to Evaluate: xxx User should receive a notification, upon clicking the notification the application should redirect user to the homepage where the new survey will be available.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
