@@ -32,7 +32,7 @@
 - How to Evaluate: Check home page for available survey. There should only be 1 survey available at any time. 
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 6: Update login
+### Task 1: Update login
 - Description: Setup login to login user once and leave them logged in. No timeout. No option to logout. 
 - How to Evaluate:  Access survey site through url address. Login and see if there is an option to logout. Close and reopen browser. Access site through url again. Check to make sure you are still logged in.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
