@@ -19,7 +19,7 @@ function signup(){
 	var userEmail = document.getElementById("su_email_field").value;
     var userPass = document.getElementById("su_password_field").value;
 
-    window.alert("Hey there: " + userEmail + "Your password is: " + userPass)
+    window.alert("Hey there: " + userEmail + "Thanks for registering!")
 
 	firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
 	  // Handle Errors here.
