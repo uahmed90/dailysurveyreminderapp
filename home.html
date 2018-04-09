@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>Home Page</title>
+            <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed" rel="stylesheet">
+            <link rel="stylesheet" href="style.css">
+    
+    
+   <link href="//cdn.muicss.com/mui-0.9.39-rc1/css/mui.min.css" rel="stylesheet" type="text/css" />
+<script src="//cdn.muicss.com/mui-0.9.39-rc1/js/mui.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link href="//cdn.muicss.com/mui-0.9.39-rc1/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.39-rc1/js/mui.min.js"></script>
+  </head>
+    <body>
+        
+        <div id="user_div" class = "loggedin-div">
+            <h3>Welcome</h3>
+            <p id="user_para"></p>
+            <button onclick="window.location.href='introsurveytotalpackage.html'">Take Survey</button>
+            <br>
+            <button onclick="signOut()">Logout</button>
+            
+        </div>
+        
+         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-functions.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCOUA9eYXRgrStbMXx-bcE2lR7e5IYjP2g",
+                authDomain: "testingdb-a8cd7.firebaseapp.com",
+                databaseURL: "https://testingdb-a8cd7.firebaseio.com",
+                projectId: "testingdb-a8cd7",
+                storageBucket: "testingdb-a8cd7.appspot.com",
+                messagingSenderId: "384953133465"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        
+        <script src="home.js"></script>
+
+    </body>
+</html>
