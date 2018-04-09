@@ -14,14 +14,14 @@
 
 ## Tasks: Umair
 
-### Task 1: xxx (Task Name)
-- Description: xxx (Task Description)
-- How to Evaluate: xxx (Instructions)
+### Task 1: Setup Timed Notifications
+- Description: xxx Setup an app server that will create and send notifications to users when a new survey is available
+- How to Evaluate: xxx User should receive a notification, upon clicking the notification the application should redirect user to the homepage where the new survey will be available.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 2: xxx (Task Name)
-- Description: xxx (Task Description)
-- How to Evaluate: xxx (Instructions)
+### Task 2: xxx Rework HTML page dynamic design.
+- Description: xxx Rework dynamic page design to be able to add and delete sections depending on number of questions available.
+- How to Evaluate: xxx Add or delete questions, see if page adjusts accordingly.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 
@@ -40,25 +40,29 @@
 
 ## Tasks: Clayton
 
-### Task 1: xxx (Task Name)
-- Description: xxx (Task Description)
-- How to Evaluate: xxx (Instructions)
+### Task 1: Clayton Bolding Update UI
+- Description:  Update existing UI for a more pleasant experience, add some colors. 
+- How to Evaluate:  Run the app.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 2: xxx (Task Name)
-- Description: xxx (Task Description)
-- How to Evaluate: xxx (Instructions)
+
+ ### Task 2: Clayton Bolding Create User information page.
+- Description:  After login, create a user information page that prompts user to enter age and grade. 
+- How to Evaluate:  Register new user and login, it should you take you to the user info page. 
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 
 ## Tasks: Rick
 
-### Task 1: xxx (Task Name)
-- Description: xxx (Task Description)
-- How to Evaluate: xxx (Instructions)
+### Task 1:  Create a back-end page
+
+- Description:  Back-end page that would allow user to add, delete or change questions and answers 
+- How to Evaluate:  Add, change or delete a question, then run the application and see if the changes have been made. 
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 2: xxx (Task Name)
-- Description: xxx (Task Description)
-- How to Evaluate: xxx (Instructions)
+
+### Task 3: Export FireBase Results to Excel/Spreadsheet format
+
+- Description: The results for all collected answers are saved to a interactive spreadsheet format (compatible with MS Excel or otherwise) This connversion will be accomplished on a regular basis, hourly or daily
+- How to Evaluate:  Add, change or delete a question, then run the application and see if the changes have been made. 
 - Outcome of Task: xxx (Description; filled in at end of iteration)
