@@ -32,7 +32,7 @@
 - How to Evaluate: Check home page for available survey. There should only be 1 survey available at any time. 
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 1: Update login
+### Task 2: Update login
 - Description: Setup login to login user once and leave them logged in. No timeout. No option to logout. 
 - How to Evaluate:  Access survey site through url address. Login and see if there is an option to logout. Close and reopen browser. Access site through url again. Check to make sure you are still logged in.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
@@ -40,13 +40,13 @@
 
 ## Tasks: Clayton
 
-### Task 1: Clayton Bolding Update UI
+### Task 1: Update UI
 - Description:  Update existing UI for a more pleasant experience, add some colors. 
 - How to Evaluate:  Run the app.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 
- ### Task 2: Clayton Bolding Create User information page.
+ ### Task 2: Create User information page.
 - Description:  After login, create a user information page that prompts user to enter age and grade. 
 - How to Evaluate:  Register new user and login, it should you take you to the user info page. 
 - Outcome of Task: xxx (Description; filled in at end of iteration)
@@ -61,7 +61,7 @@
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 
-### Task 3: Export FireBase Results to Excel/Spreadsheet format
+### Task 2: Export FireBase Results to Excel/Spreadsheet format
 
 - Description: The results for all collected answers are saved to a interactive spreadsheet format (compatible with MS Excel or otherwise) This connversion will be accomplished on a regular basis, hourly or daily
 - How to Evaluate:  Add, change or delete a question, then run the application and see if the changes have been made. 
