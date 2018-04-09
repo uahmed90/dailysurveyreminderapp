@@ -27,14 +27,14 @@
 
 ## Tasks: Shane
 
-### Task 1: xxx (Task Name)
-- Description: xxx (Task Description)
-- How to Evaluate: xxx (Instructions)
+### Task 1: Timely Presence of Surveys
+- Description: Setup survey's to only be displayed when available and disappear once submitted.
+- How to Evaluate: Check home page for available survey. There should only be 1 survey available at any time. 
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
-### Task 2: xxx (Task Name)
-- Description: xxx (Task Description)
-- How to Evaluate: xxx (Instructions)
+### Task 6: Update login
+- Description: Setup login to login user once and leave them logged in. No timeout. No option to logout. 
+- How to Evaluate:  Access survey site through url address. Login and see if there is an option to logout. Close and reopen browser. Access site through url again. Check to make sure you are still logged in.
 - Outcome of Task: xxx (Description; filled in at end of iteration)
 
 
