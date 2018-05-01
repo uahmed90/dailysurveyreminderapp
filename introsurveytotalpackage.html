@@ -55,22 +55,22 @@ var json = {
       name: "page1",
       elements: [{
           type: "dropdown",
-          name: "question1",
+          name: "Sex: ",
           title: "Gender",
           isRequired: true,
           choices: [{
-              value: "item1",
+              value: "Male",
               text: "Male"
             },
             {
-              value: "item2",
+              value: "Female",
               text: "Female"
             }
           ]
         },
         {
           type: "text",
-          name: "question2",
+          name: "Age: ",
           startWithNewLine: false,
           title: "Age",
           isRequired: true,
@@ -78,67 +78,67 @@ var json = {
         },
         {
           type: "dropdown",
-          name: "question7",
+          name: "Grade: ",
           title: "Grade",
           isRequired: true,
           choices: [{
-              value: "item1",
+              value: "6th",
               text: "6th"
             },
             {
-              value: "item2",
+              value: "7th",
               text: "7th"
             },
             {
-              value: "item3",
+              value: "8th",
               text: "8th"
             },
             {
-              value: "item4",
+              value: "9th",
               text: "9th"
             },
             {
-              value: "item5",
+              value: "10th",
               text: "10th"
             },
             {
-              value: "item6",
+              value: "11th",
               text: "11th"
             },
             {
-              value: "item7",
+              value: "12th",
               text: "12th"
             }
           ]
         },
         {
           type: "checkbox",
-          name: "question3",
+          name: "Race: ",
           title: "What is your Race/Ethnicity (check all that apply)",
           isRequired: true,
           hasOther: true,
           choices: [{
-              value: "white",
+              value: "White/European",
               text: "White/European"
             },
             {
-              value: "afr",
+              value: "African American",
               text: "African American"
             },
             {
-              value: "as",
+              value: "Asian",
               text: "Asian"
             },
             {
-              value: "lat",
+              value: "Latino/Hispanic",
               text: "Latino/Hispanic"
             },
             {
-              value: "nav",
+              value: "Native American",
               text: "Native American"
             },
             {
-              value: "haw",
+              value: "Native Hawaiian",
               text: "Native Hawaiian"
             }
           ],
@@ -150,59 +150,59 @@ var json = {
       name: "page2",
       elements: [{
           type: "radiogroup",
-          name: "question4",
+          name: "School: ",
           title: "Are you attending a PRIVATE or PUBLIC school while participating in this survey?",
           isRequired: true,
           choices: [{
-              value: "item1",
+              value: "Public School",
               text: "Public School"
             },
             {
-              value: "item2",
+              value: "Private School",
               text: "Private School"
             }
           ]
         },
         {
           type: "dropdown",
-          name: "question5",
-          visibleIf: "{question4} = \"item1\"",
+          name: "Lunch: ",
+          visibleIf: "{School: } = \"Public School\"",
           title: "Are you eligible for free or reduced-price lunch?",
           isRequired: true,
           choices: [{
-              value: "item1",
+              value: "Yes",
               text: "Yes"
             },
             {
-              value: "item2",
+              value: "No",
               text: "No"
             }
           ]
         },
         {
           type: "radiogroup",
-          name: "question6",
-          visibleIf: "{question4} = \"item2\"",
+          name: "Tuition: ",
+          visibleIf: "{School: } = \"Private School\"",
           title: "Which of the following is true for you?",
           isRequired: true,
           choices: [{
-              value: "item1",
+              value: "waiver/parents work here",
               text: " I receive full/partial tuition waiver because my parent(s) work at this school"
             },
             {
-              value: "item2",
+              value: "some tuition/some aid",
               text: "My parents/guardians and/or another relative(s) pay some tuition, and I receive financial aid"
             },
             {
-              value: "item3",
+              value: "parents/guardians/relatives pay tuition",
               text: " My parents/guardians and another relative(s) (e.g., grandparents) pay the full tuition"
             },
             {
-              value: "item4",
+              value: "parents/guardians pay tuition",
               text: "My parents/guardians pay the full tuition"
             },
             {
-              value: "item5",
+              value: "dont know",
               text: "I don't know"
             }
           ]
@@ -220,8 +220,7 @@ var survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
   document.querySelector('#result').innerHTML = "result: " + JSON.stringify(result.data);
-  window.alert("Thank you for completing the survey.")
-  location.href = 'home.html';
+  
 });
 
 $("#surveyElement").Survey({
