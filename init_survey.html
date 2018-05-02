@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-            <title>Home Page</title>
+            <title>Survey</title>
             <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed" rel="stylesheet">
             <link rel="stylesheet" href="style.css">
     
@@ -16,24 +16,25 @@
     <link href="//cdn.muicss.com/mui-0.9.39-rc1/css/mui.min.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.muicss.com/mui-0.9.39-rc1/js/mui.min.js"></script>
   </head>
-    <body>
-        
-        <div id="user_div" class = "loggedin-div">
-            <h3>Welcome</h3>
-            <p id="user_para"></p>
-            <button onclick="window.location.href='introsurveytotalpackage.html'">Take Intro Survey</button>
+
+  <body>
+        <h1>This is the Initial Survey</h1>
+        <h2>Please answer the following questions</h2>
+
+        <div class = "quest1">
+            <h3 id="q1"></h3>
+            <label class="option"><input type="radio" name="option" value="q1a1" /><span id="q1a1"></span></label>
             <br>
-            <button onclick="window.location.href='survey_1.html'">Take Mid-day Survey</button>
-            <br>
-            <button onclick="window.location.href='survey_2.html'">Take Afternoon Survey</button>
-            <br>
-            <button onclick="window.location.href='survey_3.html'">Take Evening Survey</button>
-            <br>
-            <button onclick="signOut()">Logout</button>
-            
+            <label class="option"><input type="radio" name="option" value="q1a2" /><span id="q1a2"></span></label>
+            <br><br>
+            <button id="nextPlease" onclick='window.alert(q1a2.value)''>Click me!!!</button>
+
         </div>
+
         
-         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
@@ -53,8 +54,6 @@
             firebase.initializeApp(config);
         </script>
 
-        
-        <script src="home.js"></script>
-
+        <script src="init_survey.js"></script>
     </body>
 </html>

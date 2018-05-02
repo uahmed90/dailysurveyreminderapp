@@ -1,0 +1,1205 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+      <script type="text/javascript" src="https://unpkg.com/survey-jquery@0.12.10/survey.jquery.min.js"></script>
+  
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+  
+  <style type="text/css">
+    .btn-green {
+  background-color: #003087;
+  color: #fff;
+  border-radius: 3px; }
+  .btn-green:hover, .btn-green:focus {
+    background-color: #898d8d;
+    color: #fff; }
+
+.panel-footer {
+  text-align: right;
+  background-color: #fff; }
+
+.title {
+  font-family: "Helvetica"; }
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 10px;
+  border-color: #003087; }
+
+  </style>
+
+  <title>Survey</title>
+
+<script type="text/javascript">
+window.onload=function(){
+
+var json = {
+  pages: [{
+      name: "page1",
+      elements: [{
+          type: "dropdown",
+          name: "Interaction type",
+          title: "Interaction type",
+          isRequired: true,
+          choices: [{
+              value: "Face-to-face",
+              text: "Face-to-face"
+            },
+            {
+              value: "Device-based (phone call, video chat, texting, messaging, etc.)",
+              text: "Device-based (phone call, video chat, texting, messaging, etc.)"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "On your phone ",
+          visibleIf: "{Interaction type} = \"Face-to-face\"",
+          title: "How much were you doing something else on your phone during this interaction? (For example, texting/messaging others, browsing, doing homework on the phne, etc.)",
+          isRequired: true,
+          choices: [{
+              value: "1 - Not at all",
+              text: "1 - Not at all"
+              },
+            {
+              value: "2 - Part of the time during the interaction",
+              text: "2 - Part of the time during the interaction"
+            },
+            {
+              value: "3 - Most of the time during the interation",
+              text: "3 - Most of the time during the interation"
+            },
+            {
+              value: "4 - All of the time during the interation",
+              text: "4 - All of the time during the interation"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Friend on their phone ",
+          visibleIf: "{Interaction type} = \"Face-to-face\"",
+          title: "How much was your friend doing something else on the phone during this interaction? (For example, texting/messaging others, browsing, doing homework on the phone, etc.)",
+          isRequired: true,
+          choices: [{
+              value: "1 - Not at all",
+              text: "1 - Not at all"
+              },
+            {
+              value: "2 - Part of the time during the interaction",
+              text: "2 - Part of the time during the interaction"
+            },
+            {
+              value: "3 - Most of the time during the interation",
+              text: "3 - Most of the time during the interation"
+            },
+            {
+              value: "4 - All of the time during the interation",
+              text: "4 - All of the time during the interation"
+            }
+          ]
+        },
+        {
+          type: "text",
+          name: "About the interaction",
+          visibleIf: "{Interaction type} = \"Face-to-face\"",
+          startWithNewLine: true,
+          title: "Tell us about this interaction. Make sure you mention: (a) what the interaction was about (hang out, chit chat, discuss assignments, etc.) (b) what other things you and/or your friend was doing on the phone during this interaction (c) whether both of you were involved in this other activity, and (d) any other information about this interaction you'd like to share with us. Avoid using your friend's real name.",
+          isRequired: true,
+          inputType: "text"
+        },
+        {
+          type: "dropdown",
+          name: "You doing something else ",
+          visibleIf: "{Interaction type} = \"Device-based (phone call, video chat, texting, messaging, etc.)\"",
+          title: "How much were you doing something else during this interaction? (For example, texting/messaging others, browsing, doing homework, etc.)",
+          isRequired: true,
+          choices: [{
+              value: "1 - Not at all",
+              text: "1 - Not at all"
+              },
+            {
+              value: "2 - Part of the time during the interaction",
+              text: "2 - Part of the time during the interaction"
+            },
+            {
+              value: "3 - Most of the time during the interation",
+              text: "3 - Most of the time during the interation"
+            },
+            {
+              value: "4 - All of the time during the interation",
+              text: "4 - All of the time during the interation"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Friend doing something else",
+          visibleIf: "{Interaction type} = \"Device-based (phone call, video chat, texting, messaging, etc.)\"",
+          title: "How much was your friend doing something else during this interaction? (For example, texting/messaging others, browsing, doing homework, etc.)",
+          isRequired: true,
+          choices: [{
+              value: "1 - I know or I think the friend was not doing anything else",
+              text: "1 - I know or I think the friend was not doing anything else"
+              },
+            {
+              value: "2 - I know or I think the friend was doing something else part of the time during the interaction",
+              text: "2 - I know or I think the friend was doing something else part of the time during the interaction"
+            },
+            {
+              value: "3 - I know or I think the friend was doing something else most of the time during the interaction",
+              text: "3 - I know or I think the friend was doing something else most of the time during the interaction"
+            },
+            {
+              value: "4 - I know or I think the friend was doing something else all the time throughout the interaction",
+              text: "4 - I know or I think the friend was doing something else all the time throughout the interaction"
+            }
+          ]
+        },
+        {
+          type: "text",
+          name: "About the interaction",
+          visibleIf: "{Interaction type} = \"Device-based (phone call, video chat, texting, messaging, etc.)\"",
+          startWithNewLine: false,
+          title: "Tell us about this interaction. Make sure you mention: (a) what the interaction was about (hang out, chit chat, discuss assignments, etc.) (b) what other things you and/or your friend was doing during this interaction (c) whether both of you were involved in this other activity, and (d) any other information about this interaction you’d like to share with us. Avoid using your friend’s full real name.",
+          isRequired: true,
+          inputType: "text"
+        },
+      ]
+    },
+    {
+      name: "page2",
+      elements: [{
+          type: "dropdown",
+          name: "Guilt",
+          title: "I felt guilty that I was doing something else (on the phone) while interacting with the friend.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            },
+            {
+              value: "Not Applicable",
+              text: "Not Applicable"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Should not have",
+          title: "I shouldn't have been doing other things (on the phone) when interacting with the friend.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            },
+            {
+              value: "Not Applicable",
+              text: "Not Applicable"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Inappropriate",
+          title: "It was inapproprate that I was doing other things (on the phone) while interacting with the friend",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            },
+            {
+              value: "Not Applicable",
+              text: "Not Applicable"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Normal",
+          title: "It was normal to do something else (on the phone) while interacting with the friend.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            },
+            {
+              value: "Not Applicable",
+              text: "Not Applicable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: "page3",
+      elements: [{
+          type: "Wish my friend was not doing other things",
+          name: "Guilt",
+          title: "I wish the friend was not doing other things (on the phone while interacting with me.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            },
+            {
+              value: "Not Applicable",
+              text: "Not Applicable"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "I felt invisible",
+          title: "I felt invisible when the friend did something else (on the phone) while interacting with me.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            },
+            {
+              value: "Not Applicable",
+              text: "Not Applicable"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "I felt unimportant",
+          title: "When the friend did something else (on the phone) during our interaction, I felt unimportant to the friend",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            },
+            {
+              value: "Not Applicable",
+              text: "Not Applicable"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Normal",
+          title: "I didn't care whether the friend was doing something else (on the phone) while interacting with me.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            },
+            {
+              value: "Not Applicable",
+              text: "Not Applicable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: "page4",
+      elements: [{
+          type: "dropdown",
+          name: "Relationship satisfaction",
+          title: "How satisfied are you with your relationship with this friend today?",
+          isRequired: true,
+          choices: [{
+              value: "1 - Not at All",
+              text: "1 - Not at All"
+            },
+            {
+              value: "2 - Not much",
+              text: "2 - Not much"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Somewhat",
+              text: "4 - Somewhat"
+            },
+            {
+              value: "5 - Very much",
+              text: "5 - Very much"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Relationship goodness",
+          title: "How good is your relationship with this friend today?",
+          isRequired: true,
+          choices: [{
+              value: "1 - Not at All",
+              text: "1 - Not at All"
+            },
+            {
+              value: "2 - Not much",
+              text: "2 - Not much"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Somewhat",
+              text: "4 - Somewhat"
+            },
+            {
+              value: "5 - Very much",
+              text: "5 - Very much"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "The way things are",
+          title: "How happy are you with the way things are between you and this friend today?",
+          isRequired: true,
+          choices: [{
+              value: "1 - Not at All",
+              text: "1 - Not at All"
+            },
+            {
+              value: "2 - Not much",
+              text: "2 - Not much"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Somewhat",
+              text: "4 - Somewhat"
+            },
+            {
+              value: "5 - Very much",
+              text: "5 - Very much"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Support",
+          title: "Today I feel I can turn to this friend for support with personal problems",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Help, advice, sympathy",
+          title: "Today I feel I can depend on this friend for help, advice or sympathy.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Cheer things up",
+          title: "Today I feel I can depend on this friend to cheer things up if I feel down or upset.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Lack companionship",
+          title: "Today I feel that I lack companionship from peers in school.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Left out by peers",
+          title: "Today I feel left out by peers in school",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Isolated",
+          title: "Today I feel I isolated from peers in school.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+
+      ]
+    },
+    {
+      name: "page5",
+      elements: [{
+          type: "dropdown",
+          name: "Preparedness",
+          title: "Today I came to class unprepared (homework unfinished, forgot to bring books or other materials, etc.)",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Homework done",
+          title: "I completed all my homework due today on time.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Skipped class",
+          title: "Today I skipped many classes without permission.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Participated",
+          title: "Today I actively took part in class discussions.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Worked hard",
+          title: "Today I worked hard to do well in school.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Part of my school",
+          title: "Today I feel like I am part of my school.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Care about school",
+          title: "Today I care about the school I go to.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Happy to be at school",
+          title: "Today I am happy to be at my school.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Don't find school fun and exciting",
+          title: "Today I don't find school fun and exciting.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Enjoy my classes",
+          title: "Today I enjoy the classes I am taking.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+
+        {
+          type: "dropdown",
+          name: "Want to learn",
+          title: "Today I want to learn as much as I can at school.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Grades are important",
+          title: "Today I think it is important to ake good grades.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "School is useful",
+          title: "Today I think the things I learn at school are useful.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "Think about how to do well",
+          title: "Today I think a lot about how to do well in school.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        },
+        {
+          type: "dropdown",
+          name: "School is important",
+          title: "Today I think school is very important for later success.",
+          isRequired: true,
+          choices: [{
+              value: "1 - Strongly Disagree",
+              text: "1 - Strongly Disagree"
+            },
+            {
+              value: "2 - Disagree",
+              text: "2 - Disagree"
+            },
+            {
+              value: "3 - Neutral",
+              text: "3 - Neutral"
+            },
+            {
+              value: "4 - Agree",
+              text: "4 - Agree"
+            },
+            {
+              value: "5 - Strongly Agree",
+              text: "5 - Strongly Agree"
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+};
+
+Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
+Survey.defaultBootstrapCss.matrixdynamic.button = "btn btn-green";
+Survey.Survey.cssType = "bootstrap";
+
+var survey = new Survey.Model(json);
+
+survey.onComplete.add(function(result) {
+  document.querySelector('#result').innerHTML = "result: " + JSON.stringify(result.data);
+  
+});
+
+$("#surveyElement").Survey({
+  model: survey
+});
+
+
+}
+
+
+
+
+</script>
+
+  
+</head>
+
+<body>
+  <!doctype html>
+<html>
+  <title>Daily Survey Reminder</title>
+
+  <head>
+    <link rel="stylesheet" href="Survey.css">
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-functions.js"></script>
+
+<script src="https://unpkg.com/jquery"></script>
+        
+<script src="https://surveyjs.azureedge.net/1.0.15/survey.jquery.js"></script>
+ <link href="//cdn.muicss.com/mui-0.9.39-rc1/css/mui.min.css" rel="stylesheet" type="text/css" />
+<script src="//cdn.muicss.com/mui-0.9.39-rc1/js/mui.min.js"></script>       
+<link href="https://surveyjs.azureedge.net/1.0.15/survey.css" type="text/css" rel="stylesheet"/>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link href="//cdn.muicss.com/mui-0.9.39-rc1/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.39-rc1/js/mui.min.js"></script>
+  </head>
+
+  </head>
+
+  <body>
+    <h1 class="title">
+      Daily Survey
+      <hr>
+    </h1>
+    <h2>
+      Welcome to the Evening Survey
+    </h2>
+    <p>
+      Answer the following questions by thinking of one interaction you had with a close friend today. <br>
+      The interaction can be face-to-face or via a phone (such as a phone call, video chat, texting, messaging, etc.), <br>
+      but at least one of you needed to have used a phone or tablet (to talk, text, browse, etc.) during this interaction.
+    </p>
+
+
+
+    <div id="surveyElement"></div>
+
+    <div id="result"></div>
+    <hr>
+
+  </body>
+
+
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "L3qwe9q2"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+
