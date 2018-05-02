@@ -203,7 +203,7 @@ survey.onComplete.add(function(result) {
  var sanitized = '[' + res.replace(/}{/g, '},{') + ']';
  var op = JSON.parse(sanitized);
    firebase.database().ref('Results').push(op);
- 
+  location.href = 'home.html';
 
 
 });

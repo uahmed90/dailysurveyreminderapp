@@ -47,6 +47,8 @@ hr {
 
   <title>Survey</title>
 
+
+
 <script type="text/javascript">
 window.onload=function(){
 
@@ -181,7 +183,7 @@ var json = {
           title: "Tell us about this interaction. Make sure you mention: (a) what the interaction was about (hang out, chit chat, discuss assignments, etc.) (b) what other things you and/or your friend was doing during this interaction (c) whether both of you were involved in this other activity, and (d) any other information about this interaction you’d like to share with us. Avoid using your friend’s full real name.",
           isRequired: true,
           inputType: "text"
-        },
+        }
       ]
     }
   ]
@@ -193,20 +195,21 @@ Survey.Survey.cssType = "bootstrap";
 
 var survey = new Survey.Model(json);
 
+var database = firebase.database();
 survey.onComplete.add(function(result) {
-   var res =  document.querySelector('#result').innerHTML = "" + JSON.stringify(result.data);
+ var res =  document.querySelector('#result').innerHTML = "" + JSON.stringify(result.data);
 
 
  var sanitized = '[' + res.replace(/}{/g, '},{') + ']';
  var op = JSON.parse(sanitized);
    firebase.database().ref('Results').push(op);
- 
-  
-});
+  location.href = 'home.html';
 
-// $("#surveyElement").Survey({
-//   model: survey
-// });
+
+});
+$("#surveyElement").Survey({
+  model: survey
+});
 
 
 }
@@ -237,6 +240,7 @@ survey.onComplete.add(function(result) {
 <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-functions.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -250,6 +254,7 @@ survey.onComplete.add(function(result) {
   };
   firebase.initializeApp(config);
 </script>
+
 <script src="https://unpkg.com/jquery"></script>
         
 <script src="https://surveyjs.azureedge.net/1.0.15/survey.jquery.js"></script>
