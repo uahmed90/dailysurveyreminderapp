@@ -198,7 +198,7 @@ var survey = new Survey.Model(json);
 var database = firebase.database();
 survey.onComplete.add(function(result) {
  var res =  document.querySelector('#result').innerHTML = "" + JSON.stringify(result.data);
-console.log(res);
+
 
  var sanitized = '[' + res.replace(/}{/g, '},{') + ']';
  var op = JSON.parse(sanitized);
