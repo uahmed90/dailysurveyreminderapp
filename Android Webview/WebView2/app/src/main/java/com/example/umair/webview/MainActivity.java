@@ -1,5 +1,6 @@
 package com.example.umair.webview;
 
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -24,6 +25,8 @@ import android.webkit.WebViewClient;
 
 import com.example.umair.webview.Common.Config;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
     WebView wv;
@@ -46,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wv = (WebView) findViewById(R.id.wv);
+
+
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        Intent notificationIntent = new Intent(this, AlarmReceiver.class);
+        PendingIntent broadcast = PendingIntent.getBroadcast(this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.HOUR_OF_DAY,14);
+        cal.add(Calendar.MINUTE, 40);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
 
 
         if (savedInstanceState != null) {
