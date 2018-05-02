@@ -271,7 +271,7 @@ var survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
   document.querySelector('#result').innerHTML = "result: " + JSON.stringify(result.data);
-  
+  location.href = 'home.html';
 });
 
 $("#surveyElement").Survey({
