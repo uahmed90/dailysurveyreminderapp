@@ -195,7 +195,7 @@ var survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
    var res =  document.querySelector('#result').innerHTML = "" + JSON.stringify(result.data);
-console.log(res);
+
 
  var sanitized = '[' + res.replace(/}{/g, '},{') + ']';
  var op = JSON.parse(sanitized);
@@ -204,9 +204,9 @@ console.log(res);
   
 });
 
-$("#surveyElement").Survey({
-  model: survey
-});
+// $("#surveyElement").Survey({
+//   model: survey
+// });
 
 
 }
