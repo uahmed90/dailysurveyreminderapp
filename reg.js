@@ -3,7 +3,7 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    location.href = 'home.html';
+    location.href = 'introsurveytotalpackage.html';
 
     
   } else {
