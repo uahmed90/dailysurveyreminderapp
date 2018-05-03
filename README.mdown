@@ -1,0 +1,15 @@
+Project: Daily Survey Reminder
+
+Mentor: Dr. Chia-Chen Yang
+
+Team Members:
+
+Umair Ahmed
+Shane Gladden
+Rick DeSaussure
+Clayton Bolding
+
+
+The goal of this project is to collect data from middle to high school students about their conversational behaviors and how this is facilitated or hindered by the use of technology. Getting information about how often kids are actually talking to each other, how often it is in person or through their phones. The application sends out survey’s based on time of day, then records those results in our firebase storage where our mentor will be able to move them to an excel sheet to perform her study. 
+
+Link to commercial: 
